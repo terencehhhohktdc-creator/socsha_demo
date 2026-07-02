@@ -3,52 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo - Social Sharing Pop-up</title>
+  <title>Share Pop-up Demo - HKTDC</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Full Page Background Image -->
-  <!-- The sharing pop-up will appear automatically on top -->
+  <!-- Background -->
+  <div class="page-background"></div>
 
-  <!-- Social Sharing Pop-up (Auto Show) -->
+  <!-- Pop-up (Auto Show) -->
   <div id="overlay" class="overlay">
     <div class="popup">
       <span class="close" onclick="closePopup()">×</span>
 
+      <!-- Title & Subtitle -->
       <h2>Share Your Attendance</h2>
       <p class="subtitle">Invite your industry peers to join.</p>
 
-      <div class="event-banner">
-        <strong>Food Expo Pro | E+PLUS</strong><br>
-        HKCEC • 13-15 AUG 2026 + 6-22 AUG 2026<br>
-        Click2Match Online
+      <!-- Event Photo Area -->
+      <div class="event-photo-area">
+        <img src="img/event-photo.jpg" alt="Food Expo Pro | E+PLUS" class="event-photo">
+        
+        <div class="event-overlay">
+          <div class="event-text">
+            <strong>Food Expo Pro | E+PLUS</strong><br>
+            HKCEC<br>
+            13-15 AUG 2026 + 6-22 AUG 2026<br>
+            Click2Match Online
+          </div>
+        </div>
       </div>
 
+      <!-- Action Buttons -->
       <div class="action-buttons">
-        <button class="btn primary" onclick="downloadImage()">1. Download Image</button>
-        <button class="btn secondary" onclick="copyShareableLink()">2. Copy Shareable Link</button>
+        <button class="btn primary" onclick="downloadImage()">
+          <span>↓</span> Download Image
+        </button>
+        <button class="btn secondary" onclick="copyShareableLink()">
+          <span>⎘</span> Copy Shareable Link
+        </button>
       </div>
 
+      <!-- Social Share -->
       <p class="share-label">Or share directly:</p>
-
+      
       <div class="share-icons">
-        <div class="icon" onclick="shareToLinkedIn()"><span class="circle">in</span><span>LinkedIn</span></div>
-        <div class="icon" onclick="shareToFacebook()"><span class="circle">f</span><span>Facebook</span></div>
-        <div class="icon" onclick="shareToWhatsApp()"><span class="circle">WA</span><span>WhatsApp</span></div>
-        <div class="icon" onclick="shareToEmail()"><span class="circle">✉</span><span>Email</span></div>
-        <div class="icon" onclick="copyToClipboard()"><span class="circle">⎘</span><span>Copy</span></div>
-        <div class="icon" onclick="generateQRCode()"><span class="circle">QR</span><span>QR Code</span></div>
-        <div class="icon" onclick="shareToX()"><span class="circle">𝕏</span><span>X</span></div>
-        <div class="icon" onclick="shareToThreads()"><span class="circle">📷</span><span>Threads</span></div>
-        <div class="icon" onclick="shareToWeChat()"><span class="circle">微信</span><span>WeChat</span></div>
-        <div class="icon" onclick="shareToInstagram()"><span class="circle">IG</span><span>Instagram</span></div>
-        <div class="icon" onclick="shareToRedNote()"><span class="circle">小红书</span><span>RedNote</span></div>
+        <div class="icon" onclick="shareToLinkedIn()"><span class="circle">in</span></div>
+        <div class="icon" onclick="shareToFacebook()"><span class="circle">f</span></div>
+        <div class="icon" onclick="shareToWhatsApp()"><span class="circle">WA</span></div>
+        <div class="icon" onclick="shareToEmail()"><span class="circle">✉</span></div>
+        <div class="icon" onclick="generateQRCode()"><span class="circle">QR</span></div>
       </div>
     </div>
   </div>
 
-  <!-- QR Code Modal -->
+  <!-- QR Modal -->
   <div id="qrModal" class="modal">
     <div class="modal-content">
       <span class="close-modal" onclick="closeQRModal()">×</span>
