@@ -1,16 +1,15 @@
-// ==================== INITIALIZE IMAGES ====================
+// Initialize images from config
 function initImages() {
   const eventPhoto = document.getElementById('eventPhoto');
   eventPhoto.src = images.eventPhoto;
 
-  // Set background image
   document.body.style.backgroundImage = `url('${images.background}')`;
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center';
   document.body.style.backgroundAttachment = 'fixed';
 }
 
-// ==================== LANGUAGE SWITCHING ====================
+// Language switching + auto show popup
 function changeLanguage() {
   const lang = document.getElementById('languageSelect').value;
   const t = translations[lang];
@@ -20,22 +19,23 @@ function changeLanguage() {
   document.getElementById('downloadBtn').innerHTML = t.downloadBtn;
   document.getElementById('copyBtn').innerHTML = t.copyBtn;
   document.getElementById('shareLabel').innerText = t.shareLabel;
+
+  // Show pop-up when language changes
+  document.getElementById('overlay').style.display = 'flex';
 }
 
-// ==================== AUTO SHOW POPUP ====================
+// Auto show popup on page load
 window.onload = function() {
   initImages();
 
-  // Auto show popup
   setTimeout(function() {
     document.getElementById('overlay').style.display = 'flex';
   }, 800);
 
-  // Default language
   document.getElementById('languageSelect').value = 'en';
 };
 
-// ==================== SHARING & QR FUNCTIONS ====================
+// Config & Sharing Functions
 const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
 const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
 
