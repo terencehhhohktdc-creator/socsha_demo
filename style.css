@@ -129,3 +129,39 @@ h2 { color: #FF6B00; margin-bottom: 8px; }
   border-radius: 12px;
   text-align: center;
 }
+
+/* Thank You Confirmation Page */
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/Gemini_Generated_Image_q2jrsoq2jrsoq2jr.png') center/cover no-repeat;
+  padding: 20px;
+}
+
+.thank-you-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.check-icon {
+  font-size: 60px;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.done-btn {
+  background: #6B46C1;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
