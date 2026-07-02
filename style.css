@@ -54,7 +54,24 @@ body {
   margin: auto;
 }
 
-/* Event Photo Area (1:1) */
+/* Close Button (Right Top) */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  left: auto;
+  font-size: 26px;
+  cursor: pointer;
+  color: #666;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.close:hover {
+  color: #FF6B00;
+}
+
+/* Event Photo Area (1:1 Square) */
 .event-photo-area {
   position: relative;
   margin: 16px 0;
@@ -72,7 +89,7 @@ body {
   display: block;
 }
 
-/* Buttons */
+/* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 12px;
@@ -101,7 +118,7 @@ body {
   background: #e65c00;
 }
 
-/* Social Icons */
+/* Social Share */
 .share-label {
   font-weight: bold;
   margin-bottom: 10px;
