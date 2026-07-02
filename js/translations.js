@@ -1,4 +1,4 @@
-// config.js - All language copywriting
+// translations.js - All language translations
 const translations = {
   en: {
     title: "Share Your Attendance",
