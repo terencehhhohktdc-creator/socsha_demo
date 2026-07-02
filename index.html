@@ -27,10 +27,10 @@
 
       <!-- Event Photo Area -->
       <div class="event-photo-area">
-        <img src="img/event-photo.jpg" alt="Event Photo" class="event-photo">
+        <img id="eventPhoto" alt="Event Photo" class="event-photo">
       </div>
 
-      <!-- Buttons -->
+      <!-- Action Buttons -->
       <div class="action-buttons">
         <button class="btn primary" onclick="downloadImage()" id="downloadBtn">
           ↓ Download Image
@@ -63,7 +63,9 @@
     </div>
   </div>
 
-  <script src="config.js"></script>
+  <!-- Load Config Files First -->
+  <script src="images.js"></script>
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
