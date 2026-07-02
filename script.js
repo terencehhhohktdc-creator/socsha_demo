@@ -1,3 +1,17 @@
+// ==================== INITIALIZE IMAGES FROM CONFIG ====================
+function initImages() {
+  // Set Event Photo
+  const eventPhoto = document.getElementById('eventPhoto');
+  eventPhoto.src = images.eventPhoto;
+
+  // Set Background Image dynamically from images.js
+  document.body.style.backgroundImage = `url('${images.background}')`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center';
+  document.body.style.backgroundAttachment = 'fixed';
+}
+
+// ==================== UPDATE POPUP (Option + Language) ====================
 function updatePopup() {
   const option = document.getElementById('optionSelect').value;
   const lang = document.getElementById('languageSelect').value;
@@ -5,24 +19,33 @@ function updatePopup() {
   const optionData = translations.options[option][lang];
   const buttonData = translations.buttons[lang];
 
+  // Update texts
   document.getElementById('popupTitle').innerText = optionData.title;
   document.getElementById('popupSubtitle').innerText = optionData.subtitle;
   document.getElementById('downloadBtn').innerHTML = buttonData.downloadBtn;
   document.getElementById('copyBtn').innerHTML = buttonData.copyBtn;
   document.getElementById('shareLabel').innerText = buttonData.shareLabel;
 
+  // Show pop-up when changing option or language
   document.getElementById('overlay').style.display = 'flex';
 }
 
+// ==================== INITIALIZE ON PAGE LOAD ====================
 window.onload = function() {
+  // Initialize images (event photo + background)
+  initImages();
+
+  // Set default dropdown values
   document.getElementById('optionSelect').value = '1';
   document.getElementById('languageSelect').value = 'en';
 
+  // Auto show pop-up after page loads
   setTimeout(function() {
     updatePopup();
   }, 800);
 };
 
+// ==================== CONFIG & SHARING ====================
 const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
 const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
 
