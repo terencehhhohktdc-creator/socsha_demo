@@ -8,31 +8,39 @@
 </head>
 <body>
 
-  <!-- Pop-up (Auto Show) -->
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <select id="languageSelect" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="tc">繁體中文</option>
+      <option value="sc">简体中文</option>
+    </select>
+  </div>
+
+  <!-- Pop-up -->
   <div id="overlay" class="overlay">
     <div class="popup">
       <span class="close" onclick="closePopup()">×</span>
 
-      <h2>Share Your Attendance</h2>
-      <p class="subtitle">Invite your industry peers to join.</p>
+      <h2 id="popupTitle">Share Your Attendance</h2>
+      <p class="subtitle" id="popupSubtitle">Invite your industry peers to join.</p>
 
-      <!-- Event Photo Area (No Text) -->
+      <!-- Event Photo Area -->
       <div class="event-photo-area">
-        <img src="img/Gemini_Generated_Image_tcej46tcej46tcej.png" alt="Event Photo" class="event-photo">
+        <img src="img/event-photo.jpg" alt="Event Photo" class="event-photo">
       </div>
 
-      <!-- Action Buttons -->
+      <!-- Buttons -->
       <div class="action-buttons">
-        <button class="btn primary" onclick="downloadImage()">
-          <span>↓</span> Download Image
+        <button class="btn primary" onclick="downloadImage()" id="downloadBtn">
+          ↓ Download Image
         </button>
-        <button class="btn secondary" onclick="copyShareableLink()">
-          <span>⎘</span> Copy Shareable Link
+        <button class="btn secondary" onclick="copyShareableLink()" id="copyBtn">
+          ⎘ Copy Shareable Link
         </button>
       </div>
 
-      <!-- Social Share -->
-      <p class="share-label">Or share directly:</p>
+      <p class="share-label" id="shareLabel">Or share directly:</p>
       
       <div class="share-icons">
         <div class="icon" onclick="shareToLinkedIn()"><span class="circle">in</span></div>
@@ -55,6 +63,7 @@
     </div>
   </div>
 
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
