@@ -1,4 +1,4 @@
-/* Full Page Background Image */
+/* ==================== PAGE BACKGROUND ==================== */
 body {
   margin: 0;
   padding: 0;
@@ -8,11 +8,13 @@ body {
   min-height: 100vh;
 }
 
-/* Pop-up Overlay */
+/* ==================== POP-UP OVERLAY ==================== */
 .overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -20,7 +22,7 @@ body {
   z-index: 1000;
 }
 
-/* Pop-up Box */
+/* ==================== POP-UP BOX ==================== */
 .popup {
   background: white;
   padding: 28px 30px;
@@ -51,23 +53,25 @@ h2 {
   text-align: center;
 }
 
-/* Event Photo Area (Clean - No Text) */
+/* ==================== EVENT PHOTO AREA ==================== */
 .event-photo-area {
   position: relative;
   margin: 20px 0;
   border-radius: 12px;
   overflow: hidden;
   border: 2px dashed #ccc;
+  width: 100%;
+  height: 220px;
 }
 
 .event-photo {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Action Buttons */
+/* ==================== ACTION BUTTONS ==================== */
 .action-buttons {
   display: flex;
   gap: 12px;
@@ -97,7 +101,7 @@ h2 {
   color: #333;
 }
 
-/* Social Icons */
+/* ==================== SOCIAL SHARE SECTION ==================== */
 .share-label {
   font-weight: bold;
   margin-bottom: 10px;
@@ -123,12 +127,14 @@ h2 {
   font-size: 15px;
 }
 
-/* QR Modal */
+/* ==================== QR CODE MODAL ==================== */
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.6);
   align-items: center;
   justify-content: center;
