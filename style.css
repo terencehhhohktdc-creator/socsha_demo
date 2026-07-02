@@ -1,4 +1,4 @@
-/* Page Background */
+/* ==================== BASE ==================== */
 body {
   margin: 0;
   padding: 0;
@@ -6,28 +6,26 @@ body {
   min-height: 100vh;
 }
 
-/* Clean Switcher (No white bar) */
+/* ==================== SWITCHER ==================== */
 .switcher-container {
   display: flex;
   gap: 15px;
   padding: 15px 20px;
   background: transparent;
-  box-shadow: none;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  flex-wrap: wrap;
 }
 
 .switcher-container select {
-  padding: 8px 12px;
-  font-size: 14px;
+  padding: 10px 12px;
+  font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 6px;
   min-width: 200px;
   background: white;
+  flex: 1;
 }
 
-/* Pop-up */
+/* ==================== POP-UP ==================== */
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -37,22 +35,25 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  padding: 10px;
 }
 
 .popup {
   background: white;
-  padding: 28px 30px;
+  padding: 24px 20px;
   border-radius: 16px;
-  width: 460px;
+  width: 100%;
+  max-width: 460px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.25);
   position: relative;
+  box-sizing: border-box;
 }
 
 .close {
   position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 24px;
+  top: 12px;
+  right: 16px;
+  font-size: 26px;
   cursor: pointer;
   color: #666;
 }
@@ -61,18 +62,20 @@ h2 {
   color: #FF6B00;
   margin: 0 0 8px 0;
   text-align: center;
+  font-size: 22px;
 }
 
 .subtitle {
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-align: center;
+  font-size: 15px;
 }
 
-/* Event Photo Area (1:1 Square) */
+/* Event Photo Area */
 .event-photo-area {
   position: relative;
-  margin: 20px 0;
+  margin: 16px 0;
   border-radius: 12px;
   overflow: hidden;
   border: 2px dashed #ccc;
@@ -87,15 +90,17 @@ h2 {
   display: block;
 }
 
-/* Buttons (Same Style) */
+/* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 12px;
-  margin: 20px 0;
+  margin: 16px 0;
+  flex-wrap: wrap;
 }
 
 .btn {
   flex: 1;
+  min-width: 140px;
   padding: 12px;
   border: none;
   border-radius: 8px;
@@ -107,28 +112,31 @@ h2 {
   gap: 6px;
   background: #FF6B00;
   color: white;
+  font-size: 15px;
 }
 
 .btn:hover {
   background: #e65c00;
 }
 
-/* Social Icons */
+/* Social Share */
 .share-label {
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
+  font-size: 14px;
 }
 
 .share-icons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .icon .circle {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: #FF6B00;
   color: white;
@@ -149,11 +157,44 @@ h2 {
   align-items: center;
   justify-content: center;
   z-index: 2000;
+  padding: 20px;
 }
 
 .modal-content {
   background: white;
-  padding: 30px;
+  padding: 24px 20px;
   border-radius: 12px;
   text-align: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ==================== MOBILE RESPONSIVE ==================== */
+@media (max-width: 480px) {
+  .popup {
+    padding: 20px 16px;
+    max-width: 100%;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .switcher-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .switcher-container select {
+    width: 100%;
+    min-width: auto;
+  }
 }
