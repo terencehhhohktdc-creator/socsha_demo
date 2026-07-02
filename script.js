@@ -1,9 +1,20 @@
+// ==================== INITIALIZE IMAGES ====================
+function initImages() {
+  const eventPhoto = document.getElementById('eventPhoto');
+  eventPhoto.src = images.eventPhoto;
+
+  // Set background image
+  document.body.style.backgroundImage = `url('${images.background}')`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center';
+  document.body.style.backgroundAttachment = 'fixed';
+}
+
 // ==================== LANGUAGE SWITCHING ====================
 function changeLanguage() {
   const lang = document.getElementById('languageSelect').value;
   const t = translations[lang];
 
-  // Update popup texts
   document.getElementById('popupTitle').innerText = t.title;
   document.getElementById('popupSubtitle').innerText = t.subtitle;
   document.getElementById('downloadBtn').innerHTML = t.downloadBtn;
@@ -11,34 +22,27 @@ function changeLanguage() {
   document.getElementById('shareLabel').innerText = t.shareLabel;
 }
 
-// Set default language to English on load
+// ==================== AUTO SHOW POPUP ====================
 window.onload = function() {
+  initImages();
+
   // Auto show popup
   setTimeout(function() {
     document.getElementById('overlay').style.display = 'flex';
   }, 800);
 
-  // Set default language
+  // Default language
   document.getElementById('languageSelect').value = 'en';
 };
 
-// ==================== AUTO SHOW POPUP ====================
-window.onload = function() {
-  setTimeout(function() {
-    document.getElementById('overlay').style.display = 'flex';
-  }, 800); // Show popup after 0.8 seconds
-};
-
-// ==================== CONFIGURATION ====================
+// ==================== SHARING & QR FUNCTIONS ====================
 const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
 const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
 
-// ==================== POPUP CONTROL ====================
 function closePopup() {
   document.getElementById('overlay').style.display = 'none';
 }
 
-// ==================== SHARING FUNCTIONS ====================
 function shareToLinkedIn() {
   window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
 }
@@ -56,9 +60,7 @@ function shareToEmail() {
 }
 
 function copyToClipboard() {
-  navigator.clipboard.writeText(shareMessage).then(() => {
-    alert("Link copied to clipboard!");
-  });
+  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied!"));
 }
 
 function shareToX() {
@@ -70,21 +72,15 @@ function shareToThreads() {
 }
 
 function shareToWeChat() {
-  navigator.clipboard.writeText(shareMessage).then(() => {
-    alert("Link copied! Please open WeChat and paste it.");
-  });
+  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste in WeChat."));
 }
 
 function shareToInstagram() {
-  navigator.clipboard.writeText(shareMessage).then(() => {
-    alert("Link copied! Please open Instagram and paste it.");
-  });
+  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste in Instagram."));
 }
 
 function shareToRedNote() {
-  navigator.clipboard.writeText(shareMessage).then(() => {
-    alert("Link copied! Please open RedNote (小红书) and paste it.");
-  });
+  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste in RedNote."));
 }
 
 function downloadImage() {
@@ -92,12 +88,9 @@ function downloadImage() {
 }
 
 function copyShareableLink() {
-  navigator.clipboard.writeText(shareMessage).then(() => {
-    alert("Shareable link copied!");
-  });
+  navigator.clipboard.writeText(shareMessage).then(() => alert("Shareable link copied!"));
 }
 
-// ==================== QR CODE ====================
 function generateQRCode() {
   const modal = document.getElementById('qrModal');
   const qrImage = document.getElementById('qrImage');
@@ -111,10 +104,6 @@ function closeQRModal() {
 
 function downloadQRCode() {
   const qrImage = document.getElementById('qrImage');
-  if (!qrImage.src) {
-    alert("Please generate the QR code first.");
-    return;
-  }
   const link = document.createElement('a');
   link.download = 'qr-code.png';
   link.href = qrImage.src;
