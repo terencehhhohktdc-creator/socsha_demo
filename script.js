@@ -1,3 +1,4 @@
+// ==================== UPDATE POPUP ====================
 function updatePopup() {
   if (typeof translations === 'undefined') {
     console.error("translations is not loaded yet");
@@ -19,18 +20,18 @@ function updatePopup() {
   document.getElementById('overlay').style.display = 'flex';
 }
 
+// ==================== INITIALIZE IMAGES ====================
 function initImages() {
   const eventPhoto = document.getElementById('eventPhoto');
   eventPhoto.src = images.eventPhoto;
 
-  // Fixed version: Less top cropping + allow scroll
   document.body.style.backgroundImage = `url('${images.background}')`;
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center top';
   document.body.style.backgroundRepeat = 'no-repeat';
-  // Removed: background-attachment: fixed (this was causing top cropping)
 }
 
+// ==================== PAGE LOAD ====================
 window.onload = function() {
   initImages();
 
@@ -42,19 +43,23 @@ window.onload = function() {
   }, 800);
 };
 
-const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
-const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
+// ==================== SHARING CONFIG ====================
+const shareUrl = "https://terencehhhohktdc-creator.github.io/socsha_demo/";
+const shareMessage = `Check out this HKTDC Social Sharing Demo: ${shareUrl}`;
 
+// ==================== SHARING FUNCTIONS ====================
 function closePopup() {
   document.getElementById('overlay').style.display = 'none';
 }
 
 function shareToLinkedIn() {
-  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
+  const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+  window.open(url, '_blank');
 }
 
 function shareToFacebook() {
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+  const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+  window.open(url, '_blank');
 }
 
 function shareToWhatsApp() {
@@ -62,7 +67,7 @@ function shareToWhatsApp() {
 }
 
 function shareToEmail() {
-  window.location.href = `mailto:?subject=Join me at Food Expo Pro 2026&body=${encodeURIComponent(shareMessage)}`;
+  window.location.href = `mailto:?subject=HKTDC Social Sharing Demo&body=${encodeURIComponent(shareMessage)}`;
 }
 
 function copyToClipboard() {
