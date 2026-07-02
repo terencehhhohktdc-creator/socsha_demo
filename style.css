@@ -136,7 +136,7 @@ h2 { color: #FF6B00; margin-bottom: 8px; }
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/Gemini_Generated_Image_q2jrsoq2jrsoq2jr.png') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./img/Gemini_Generated_Image_q2jrsoq2jrsoq2jr.png') center/cover no-repeat;
   padding: 20px;
 }
 
