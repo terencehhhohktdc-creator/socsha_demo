@@ -1,6 +1,4 @@
-// ==================== UPDATE POPUP ====================
 function updatePopup() {
-  // Safety check to prevent error if translations not loaded yet
   if (typeof translations === 'undefined') {
     console.error("translations is not loaded yet");
     return;
@@ -21,7 +19,6 @@ function updatePopup() {
   document.getElementById('overlay').style.display = 'flex';
 }
 
-// ==================== INITIALIZE IMAGES ====================
 function initImages() {
   const eventPhoto = document.getElementById('eventPhoto');
   eventPhoto.src = images.eventPhoto;
@@ -32,7 +29,6 @@ function initImages() {
   document.body.style.backgroundAttachment = 'fixed';
 }
 
-// ==================== PAGE LOAD ====================
 window.onload = function() {
   initImages();
 
@@ -44,7 +40,6 @@ window.onload = function() {
   }, 800);
 };
 
-// ==================== SHARING FUNCTIONS ====================
 const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
 const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
 
