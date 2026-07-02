@@ -1,46 +1,37 @@
-/* ==================== PAGE BACKGROUND ==================== */
+/* Page Background */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  /* Background is now set dynamically via JavaScript from images.js */
   min-height: 100vh;
 }
 
-/* ==================== SWITCHER CONTAINER ==================== */
+/* Clean Switcher (No white bar) */
 .switcher-container {
   display: flex;
-  gap: 40px;
-  padding: 20px 30px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  gap: 15px;
+  padding: 15px 20px;
+  background: transparent;
+  box-shadow: none;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-.switcher-container label {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
-  display: block;
-}
-
 .switcher-container select {
   padding: 8px 12px;
-  font-size: 15px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  min-width: 220px;
+  min-width: 200px;
+  background: white;
 }
 
-/* ==================== POP-UP ==================== */
+/* Pop-up */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -78,7 +69,7 @@ h2 {
   text-align: center;
 }
 
-/* ==================== EVENT PHOTO AREA (1:1 Square) ==================== */
+/* Event Photo Area (1:1 Square) */
 .event-photo-area {
   position: relative;
   margin: 20px 0;
@@ -96,7 +87,7 @@ h2 {
   display: block;
 }
 
-/* ==================== ACTION BUTTONS (Same Style) ==================== */
+/* Buttons (Same Style) */
 .action-buttons {
   display: flex;
   gap: 12px;
@@ -122,7 +113,7 @@ h2 {
   background: #e65c00;
 }
 
-/* ==================== SOCIAL SHARE SECTION ==================== */
+/* Social Icons */
 .share-label {
   font-weight: bold;
   margin-bottom: 10px;
@@ -148,14 +139,12 @@ h2 {
   font-size: 15px;
 }
 
-/* ==================== QR CODE MODAL ==================== */
+/* QR Modal */
 .modal {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: rgba(0,0,0,0.6);
   align-items: center;
   justify-content: center;
