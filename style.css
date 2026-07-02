@@ -71,7 +71,7 @@ h2 {
   display: block;
 }
 
-/* ==================== ACTION BUTTONS ==================== */
+/* ==================== ACTION BUTTONS (Same Style) ==================== */
 .action-buttons {
   display: flex;
   gap: 12px;
@@ -89,16 +89,12 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 6px;
+  background: #FF6B00;     /* Same orange color */
+  color: white;            /* Same text color */
 }
 
-.btn.primary {
-  background: #FF6B00;
-  color: white;
-}
-
-.btn.secondary {
-  background: #f0f0f0;
-  color: #333;
+.btn:hover {
+  background: #e65c00;     /* Slightly darker on hover */
 }
 
 /* ==================== SOCIAL SHARE SECTION ==================== */
