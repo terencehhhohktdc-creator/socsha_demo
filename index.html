@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Share Pop-up Demo - HKTDC</title>
   <link rel="icon" href="data:,">
+  
+  <!-- Font Awesome for Official Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -45,14 +49,59 @@
         </button>
       </div>
 
+      <!-- Social Share with Official Icons -->
       <p class="share-label" id="shareLabel">Or share directly:</p>
       
       <div class="share-icons">
-        <div class="icon" onclick="shareToLinkedIn()"><span class="circle">in</span></div>
-        <div class="icon" onclick="shareToFacebook()"><span class="circle">f</span></div>
-        <div class="icon" onclick="shareToWhatsApp()"><span class="circle">WA</span></div>
-        <div class="icon" onclick="shareToEmail()"><span class="circle">✉</span></div>
-        <div class="icon" onclick="generateQRCode()"><span class="circle">QR</span></div>
+        <!-- LinkedIn -->
+        <div class="icon linkedin" onclick="shareToLinkedIn()">
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+
+        <!-- Facebook -->
+        <div class="icon facebook" onclick="shareToFacebook()">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="icon whatsapp" onclick="shareToWhatsApp()">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+
+        <!-- Email -->
+        <div class="icon email" onclick="shareToEmail()">
+          <i class="fas fa-envelope"></i>
+        </div>
+
+        <!-- X (Twitter) -->
+        <div class="icon x" onclick="shareToX()">
+          <i class="fab fa-x-twitter"></i>
+        </div>
+
+        <!-- Threads -->
+        <div class="icon threads" onclick="shareToThreads()">
+          <i class="fab fa-threads"></i>
+        </div>
+
+        <!-- WeChat -->
+        <div class="icon wechat" onclick="shareToWeChat()">
+          <i class="fab fa-weixin"></i>
+        </div>
+
+        <!-- Instagram -->
+        <div class="icon instagram" onclick="shareToInstagram()">
+          <i class="fab fa-instagram"></i>
+        </div>
+
+        <!-- RedNote (Xiaohongshu) -->
+        <div class="icon rednote" onclick="shareToRedNote()">
+          <i class="fas fa-book"></i>
+        </div>
+
+        <!-- QR Code -->
+        <div class="icon qr" onclick="generateQRCode()">
+          <i class="fas fa-qrcode"></i>
+        </div>
       </div>
     </div>
   </div>
