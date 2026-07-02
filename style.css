@@ -1,20 +1,14 @@
+/* Full Page Background Image */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: url('./img/Gemini_Generated_Image_q2jrsoq2jrsoq2jr.png') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
 }
 
-.page-background {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-  z-index: -1;
-}
-
-/* Pop-up */
+/* Pop-up Overlay */
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -26,6 +20,7 @@ body {
   z-index: 1000;
 }
 
+/* Pop-up Box */
 .popup {
   background: white;
   padding: 28px 30px;
@@ -56,7 +51,7 @@ h2 {
   text-align: center;
 }
 
-/* Event Photo Area */
+/* Event Photo Area (Clean - No Text) */
 .event-photo-area {
   position: relative;
   margin: 20px 0;
@@ -72,22 +67,7 @@ h2 {
   display: block;
 }
 
-.event-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
-  padding: 20px 16px 16px;
-  color: white;
-}
-
-.event-text {
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-/* Buttons */
+/* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 12px;
