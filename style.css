@@ -1,44 +1,31 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
   margin: 0;
-  padding: 40px;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('./img/your-image-name.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.main-btn {
-  background: #FF6B00;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
+/* Overlay for popup */
 .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
+/* Popup box */
 .popup {
   background: white;
   padding: 30px;
   border-radius: 12px;
   width: 420px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   position: relative;
 }
 
@@ -48,10 +35,20 @@ body {
   right: 20px;
   font-size: 24px;
   cursor: pointer;
+  color: #666;
 }
 
-h2 { color: #FF6B00; margin-bottom: 8px; }
-.subtitle { color: #555; margin-bottom: 20px; }
+h2 {
+  color: #FF6B00;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
 .event-banner {
   background: #f8f8f8;
@@ -80,7 +77,11 @@ h2 { color: #FF6B00; margin-bottom: 8px; }
 .btn.primary { background: #FF6B00; color: white; }
 .btn.secondary { background: #333; color: white; }
 
-.share-label { font-weight: bold; margin-bottom: 10px; }
+.share-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 .share-icons {
   display: flex;
@@ -110,8 +111,12 @@ h2 { color: #FF6B00; margin-bottom: 8px; }
   background: #FF6B00;
 }
 
-.icon span { font-size: 12px; text-align: center; }
+.icon span {
+  font-size: 12px;
+  text-align: center;
+}
 
+/* QR Modal */
 .modal {
   display: none;
   position: fixed;
@@ -128,40 +133,4 @@ h2 { color: #FF6B00; margin-bottom: 8px; }
   padding: 30px;
   border-radius: 12px;
   text-align: center;
-}
-
-/* Thank You Confirmation Page */
-.confirmation-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./img/Gemini_Generated_Image_q2jrsoq2jrsoq2jr.png') center/cover no-repeat;
-  padding: 20px;
-}
-
-.thank-you-box {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  max-width: 600px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.check-icon {
-  font-size: 60px;
-  color: #4CAF50;
-  margin-bottom: 10px;
-}
-
-.done-btn {
-  background: #6B46C1;
-  color: white;
-  border: none;
-  padding: 12px 40px;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
 }
