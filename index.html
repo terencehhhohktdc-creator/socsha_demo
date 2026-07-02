@@ -4,29 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Share Pop-up Demo - HKTDC</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Switchers -->
+  <!-- Clean Switcher (No labels, No white bar) -->
   <div class="switcher-container">
-    <div>
-      <label><strong>Copywriting Version:</strong></label><br>
-      <select id="optionSelect" onchange="updatePopup()">
-        <option value="1">Option 1 - Share Your Attendance</option>
-        <option value="2">Option 2 - Let Your Peers Know</option>
-        <option value="3">Option 3 - You're Attending</option>
-      </select>
-    </div>
+    <select id="optionSelect" onchange="updatePopup()">
+      <option value="1">Option 1 - Share Your Attendance</option>
+      <option value="2">Option 2 - Let Your Peers Know</option>
+      <option value="3">Option 3 - You're Attending</option>
+    </select>
 
-    <div>
-      <label><strong>Language:</strong></label><br>
-      <select id="languageSelect" onchange="updatePopup()">
-        <option value="en">English</option>
-        <option value="tc">繁體中文</option>
-        <option value="sc">简体中文</option>
-      </select>
-    </div>
+    <select id="languageSelect" onchange="updatePopup()">
+      <option value="en">English</option>
+      <option value="tc">繁體中文</option>
+      <option value="sc">简体中文</option>
+    </select>
   </div>
 
   <!-- Pop-up -->
@@ -73,11 +68,8 @@
     </div>
   </div>
 
-<!-- These two must come BEFORE script.js -->
   <script src="js/images.js"></script>
   <script src="js/translations.js"></script>
-  
-  <!-- Main script comes last -->
   <script src="script.js"></script>
 </body>
 </html>
