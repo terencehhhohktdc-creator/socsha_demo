@@ -10,7 +10,6 @@
 
   <!-- Switchers -->
   <div class="switcher-container">
-    <!-- Copywriting Version -->
     <div>
       <label><strong>Copywriting Version:</strong></label><br>
       <select id="optionSelect" onchange="updatePopup()">
@@ -20,7 +19,6 @@
       </select>
     </div>
 
-    <!-- Language -->
     <div>
       <label><strong>Language:</strong></label><br>
       <select id="languageSelect" onchange="updatePopup()">
@@ -39,12 +37,10 @@
       <h2 id="popupTitle">Share Your Attendance</h2>
       <p class="subtitle" id="popupSubtitle">Invite your industry peers to join.</p>
 
-      <!-- Event Photo Area (1:1 Square) -->
       <div class="event-photo-area">
         <img id="eventPhoto" alt="Event Photo" class="event-photo">
       </div>
 
-      <!-- Action Buttons -->
       <div class="action-buttons">
         <button class="btn primary" onclick="downloadImage()" id="downloadBtn">
           ↓ Download Image
@@ -77,7 +73,9 @@
     </div>
   </div>
 
-  <script src="config.js"></script>
+  <!-- Load JS files from js/ folder -->
+  <script src="js/images.js"></script>
+  <script src="js/translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
