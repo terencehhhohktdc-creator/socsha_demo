@@ -1,168 +1,4 @@
-/* ==================== BASE ==================== */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-}
-
-/* ==================== SWITCHER (Clean) ==================== */
-.switcher-container {
-  display: flex;
-  gap: 15px;
-  padding: 15px 20px;
-  background: transparent;
-  flex-wrap: wrap;
-}
-
-.switcher-container select {
-  padding: 10px 12px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  min-width: 200px;
-  background: white;
-  flex: 1;
-}
-
-/* ==================== POP-UP OVERLAY ==================== */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 16px;
-  box-sizing: border-box;
-}
-
-/* ==================== POP-UP BOX (HKTDC Style) ==================== */
-.popup {
-  background: #ffffff;
-  padding: 26px 24px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 440px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  position: relative;
-  box-sizing: border-box;
-  border: 1px solid #e0e0e0;
-}
-
-/* Close Button (Right Top) */
-.close {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 26px;
-  cursor: pointer;
-  color: #888888;
-  font-weight: bold;
-  z-index: 10;
-}
-
-.close:hover {
-  color: #FF6B00;
-}
-
-/* Title */
-h2 {
-  color: #FF6B00;
-  margin: 0 0 6px 0;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-}
-
-/* Subtitle */
-.subtitle {
-  color: #555555;
-  margin-bottom: 16px;
-  text-align: center;
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-/* Event Photo Area (1:1 Square) */
-.event-photo-area {
-  position: relative;
-  margin: 14px 0;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 2px dashed #cccccc;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-}
-
-.event-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Action Buttons */
-.action-buttons {
-  display: flex;
-  gap: 12px;
-  margin: 16px 0 8px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  flex: 1;
-  min-width: 140px;
-  padding: 13px 16px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-/* Primary Button (Orange) */
-.btn.primary {
-  background-color: #FF6B00;
-  color: white;
-}
-
-.btn.primary:hover {
-  background-color: #e65c00;
-  transform: translateY(-1px);
-}
-
-/* Secondary Button (Dark) */
-.btn.secondary {
-  background-color: #333333;
-  color: white;
-}
-
-.btn.secondary:hover {
-  background-color: #222222;
-  transform: translateY(-1px);
-}
-
-/* Share Label */
-.share-label {
-  font-weight: 600;
-  margin: 14px 0 8px;
-  text-align: center;
-  font-size: 14px;
-  color: #444444;
-}
-
-/* Social Icons */
+/* ==================== SOCIAL SHARE ICONS (Official Brand Style) ==================== */
 .share-icons {
   display: flex;
   flex-wrap: wrap;
@@ -170,88 +6,32 @@ h2 {
   gap: 14px;
 }
 
-.icon .circle {
-  width: 44px;
-  height: 44px;
+.icon {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: #FF6B00;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 15px;
-  transition: transform 0.2s ease;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.icon:hover .circle {
+.icon:hover {
   transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* ==================== QR MODAL ==================== */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  padding: 20px;
-}
-
-.modal-content {
-  background: white;
-  padding: 24px 20px;
-  border-radius: 12px;
-  text-align: center;
-  width: 100%;
-  max-width: 320px;
-}
-
-/* ==================== MOBILE RESPONSIVE ==================== */
-@media (max-width: 480px) {
-  .overlay {
-    padding: 12px;
-    align-items: flex-start;
-    padding-top: 30px;
-  }
-
-  .popup {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 20px 18px;
-    max-height: 88vh;           /* Limit height */
-    overflow-y: auto;           /* Make scrollable if too tall */
-  }
-
-  .event-photo-area {
-    max-height: 200px;          /* Reduce photo height on mobile */
-  }
-
-  .action-buttons {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .switcher-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .switcher-container select {
-    width: 100%;
-    min-width: auto;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-}
+/* Brand Colors */
+.icon.linkedin   { background-color: #0A66C2; }
+.icon.facebook   { background-color: #1877F2; }
+.icon.whatsapp   { background-color: #25D366; }
+.icon.email      { background-color: #EA4335; }
+.icon.x          { background-color: #000000; }
+.icon.threads    { background-color: #000000; }
+.icon.wechat     { background-color: #07C160; }
+.icon.instagram  { background: linear-gradient(45deg, #f56040, #c13584, #405de6); }
+.icon.rednote    { background-color: #FF2442; }
+.icon.qr         { background-color: #FF6B00; } /* HKTDC Orange */
