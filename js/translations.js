@@ -1,4 +1,5 @@
-const config = {
+// js/translations.js
+const translations = {
   options: {
     1: {
       en: { title: "Share Your Attendance", subtitle: "Invite your industry peers to join." },
