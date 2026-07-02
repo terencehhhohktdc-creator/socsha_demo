@@ -1,3 +1,27 @@
+// ==================== LANGUAGE SWITCHING ====================
+function changeLanguage() {
+  const lang = document.getElementById('languageSelect').value;
+  const t = translations[lang];
+
+  // Update popup texts
+  document.getElementById('popupTitle').innerText = t.title;
+  document.getElementById('popupSubtitle').innerText = t.subtitle;
+  document.getElementById('downloadBtn').innerHTML = t.downloadBtn;
+  document.getElementById('copyBtn').innerHTML = t.copyBtn;
+  document.getElementById('shareLabel').innerText = t.shareLabel;
+}
+
+// Set default language to English on load
+window.onload = function() {
+  // Auto show popup
+  setTimeout(function() {
+    document.getElementById('overlay').style.display = 'flex';
+  }, 800);
+
+  // Set default language
+  document.getElementById('languageSelect').value = 'en';
+};
+
 // ==================== AUTO SHOW POPUP ====================
 window.onload = function() {
   setTimeout(function() {
