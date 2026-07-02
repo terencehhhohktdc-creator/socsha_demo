@@ -23,12 +23,12 @@ function initImages() {
   const eventPhoto = document.getElementById('eventPhoto');
   eventPhoto.src = images.eventPhoto;
 
-  // Background - Option 2 (cover + better positioning)
+  // Fixed version: Less top cropping + allow scroll
   document.body.style.backgroundImage = `url('${images.background}')`;
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center top';
   document.body.style.backgroundRepeat = 'no-repeat';
-  document.body.style.backgroundAttachment = 'fixed';
+  // Removed: background-attachment: fixed (this was causing top cropping)
 }
 
 window.onload = function() {
