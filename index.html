@@ -3,18 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Sharing Demo - HKTDC</title>
+  <title>Registration Confirmation - Demo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Social Sharing Pop-up Demo</h1>
-    <p>This is a demo of the post-registration sharing pop-up for HKTDC events.</p>
-    
-    <button id="openBtn" class="main-btn">Open Share Popup</button>
+
+  <!-- Thank You / Confirmation Content -->
+  <div class="confirmation-container">
+    <div class="thank-you-box">
+      <div class="check-icon">✓</div>
+      <h1>Thank you</h1>
+      
+      <div class="confirmation-text">
+        <p>Thank you for your registration for [Demo Event Name].<br>
+        Your generic registration number is <strong>[Registration Number]</strong>.</p>
+        
+        <p><strong>Click2Match (Online):</strong><br>
+        Click2Match provides functions like video conferencing and business matching.</p>
+        
+        <p>You will receive a follow-up email.</p>
+      </div>
+
+      <button class="done-btn" onclick="window.location.href='#'">DONE</button>
+    </div>
   </div>
 
-  <!-- Share Popup -->
+  <!-- Social Sharing Pop-up (Auto Show) -->
   <div id="overlay" class="overlay">
     <div class="popup">
       <span class="close" onclick="closePopup()">×</span>
@@ -51,12 +65,12 @@
     </div>
   </div>
 
-  <!-- QR Code Modal -->
+  <!-- QR Modal -->
   <div id="qrModal" class="modal">
     <div class="modal-content">
       <span class="close-modal" onclick="closeQRModal()">×</span>
       <h3>Scan to Register</h3>
-      <img id="qrImage" alt="QR Code" style="width: 200px; height: 200px; margin: 20px auto; display: block;">
+      <img id="qrImage" alt="QR Code" style="width:200px; height:200px; margin:20px auto; display:block;">
       <br>
       <button onclick="downloadQRCode()">Download QR Code</button>
     </div>
