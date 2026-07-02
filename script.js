@@ -1,41 +1,28 @@
-// Initialize images from config
-function initImages() {
-  const eventPhoto = document.getElementById('eventPhoto');
-  eventPhoto.src = images.eventPhoto;
-
-  document.body.style.backgroundImage = `url('${images.background}')`;
-  document.body.style.backgroundSize = 'cover';
-  document.body.style.backgroundPosition = 'center';
-  document.body.style.backgroundAttachment = 'fixed';
-}
-
-// Language switching + auto show popup
-function changeLanguage() {
+function updatePopup() {
+  const option = document.getElementById('optionSelect').value;
   const lang = document.getElementById('languageSelect').value;
-  const t = translations[lang];
 
-  document.getElementById('popupTitle').innerText = t.title;
-  document.getElementById('popupSubtitle').innerText = t.subtitle;
-  document.getElementById('downloadBtn').innerHTML = t.downloadBtn;
-  document.getElementById('copyBtn').innerHTML = t.copyBtn;
-  document.getElementById('shareLabel').innerText = t.shareLabel;
+  const optionData = translations.options[option][lang];
+  const buttonData = translations.buttons[lang];
 
-  // Show pop-up when language changes
+  document.getElementById('popupTitle').innerText = optionData.title;
+  document.getElementById('popupSubtitle').innerText = optionData.subtitle;
+  document.getElementById('downloadBtn').innerHTML = buttonData.downloadBtn;
+  document.getElementById('copyBtn').innerHTML = buttonData.copyBtn;
+  document.getElementById('shareLabel').innerText = buttonData.shareLabel;
+
   document.getElementById('overlay').style.display = 'flex';
 }
 
-// Auto show popup on page load
 window.onload = function() {
-  initImages();
+  document.getElementById('optionSelect').value = '1';
+  document.getElementById('languageSelect').value = 'en';
 
   setTimeout(function() {
-    document.getElementById('overlay').style.display = 'flex';
+    updatePopup();
   }, 800);
-
-  document.getElementById('languageSelect').value = 'en';
 };
 
-// Config & Sharing Functions
 const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
 const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
 
