@@ -1,9 +1,14 @@
 // ==================== UPDATE POPUP ====================
 function updatePopup() {
+  // Safety check to prevent error if translations not loaded yet
+  if (typeof translations === 'undefined') {
+    console.error("translations is not loaded yet");
+    return;
+  }
+
   const option = document.getElementById('optionSelect').value;
   const lang = document.getElementById('languageSelect').value;
 
-  // Use "translations" instead of "config"
   const optionData = translations.options[option][lang];
   const buttonData = translations.buttons[lang];
 
