@@ -1,6 +1,13 @@
 const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
 const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
 
+// Auto show the sharing pop-up when page loads
+window.onload = function() {
+  setTimeout(function() {
+    document.getElementById('overlay').style.display = 'flex';
+  }, 1200); // Show after 1.2 seconds
+};
+
 // Popup Control
 function openPopup() {
   document.getElementById('overlay').style.display = 'flex';
