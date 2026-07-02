@@ -3,30 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Confirmation - Demo</title>
+  <title>Demo - Social Sharing Pop-up</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Thank You / Confirmation Content -->
-  <div class="confirmation-container">
-    <div class="thank-you-box">
-      <div class="check-icon">✓</div>
-      <h1>Thank you</h1>
-      
-      <div class="confirmation-text">
-        <p>Thank you for your registration for [Demo Event Name].<br>
-        Your generic registration number is <strong>[Registration Number]</strong>.</p>
-        
-        <p><strong>Click2Match (Online):</strong><br>
-        Click2Match provides functions like video conferencing and business matching.</p>
-        
-        <p>You will receive a follow-up email.</p>
-      </div>
-
-      <button class="done-btn" onclick="window.location.href='#'">DONE</button>
-    </div>
-  </div>
+  <!-- Full Page Background Image -->
+  <!-- The sharing pop-up will appear automatically on top -->
 
   <!-- Social Sharing Pop-up (Auto Show) -->
   <div id="overlay" class="overlay">
@@ -65,7 +48,7 @@
     </div>
   </div>
 
-  <!-- QR Modal -->
+  <!-- QR Code Modal -->
   <div id="qrModal" class="modal">
     <div class="modal-content">
       <span class="close-modal" onclick="closeQRModal()">×</span>
