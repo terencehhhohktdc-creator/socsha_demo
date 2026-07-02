@@ -1,89 +1,163 @@
-const shareUrl = "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?ref_code=YOURCODE";
-const shareMessage = `I'm attending Food Expo Pro 2026! Check it out: ${shareUrl}`;
-
-// Auto show the sharing pop-up when page loads
-window.onload = function() {
-  setTimeout(function() {
-    document.getElementById('overlay').style.display = 'flex';
-  }, 1200); // Show after 1.2 seconds
-};
-
-// Popup Control
-function openPopup() {
-  document.getElementById('overlay').style.display = 'flex';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
 }
 
-function closePopup() {
-  document.getElementById('overlay').style.display = 'none';
+.page-background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  z-index: -1;
 }
 
-document.getElementById('openBtn').addEventListener('click', openPopup);
-
-// Sharing Functions
-function shareToLinkedIn() {
-  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
+/* Pop-up */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-function shareToFacebook() {
-  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+.popup {
+  background: white;
+  padding: 28px 30px;
+  border-radius: 16px;
+  width: 460px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  position: relative;
 }
 
-function shareToWhatsApp() {
-  window.open(`https://wa.me/?text=${encodeURIComponent(shareMessage)}`, '_blank');
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
 }
 
-function shareToEmail() {
-  window.location.href = `mailto:?subject=Join me at Food Expo Pro 2026&body=${encodeURIComponent(shareMessage)}`;
+h2 {
+  color: #FF6B00;
+  margin: 0 0 8px 0;
+  text-align: center;
 }
 
-function copyToClipboard() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied!"));
+.subtitle {
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-function shareToX() {
-  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}`, '_blank');
+/* Event Photo Area */
+.event-photo-area {
+  position: relative;
+  margin: 20px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px dashed #ccc;
 }
 
-function shareToThreads() {
-  window.open(`https://www.threads.net/intent/post?text=${encodeURIComponent(shareMessage)}`, '_blank');
+.event-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
 }
 
-function shareToWeChat() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste it in WeChat."));
+.event-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  padding: 20px 16px 16px;
+  color: white;
 }
 
-function shareToInstagram() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste it in Instagram."));
+.event-text {
+  font-size: 15px;
+  line-height: 1.4;
 }
 
-function shareToRedNote() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste it in RedNote."));
+/* Buttons */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
 }
 
-function downloadImage() {
-  alert("Download feature triggered.");
+.btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
-function copyShareableLink() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Shareable link copied!"));
+.btn.primary {
+  background: #FF6B00;
+  color: white;
 }
 
-// QR Code using QuickChart.io
-function generateQRCode() {
-  const modal = document.getElementById('qrModal');
-  const qrImage = document.getElementById('qrImage');
-  qrImage.src = `https://quickchart.io/qr?text=${encodeURIComponent(shareUrl)}&size=200`;
-  modal.style.display = 'flex';
+.btn.secondary {
+  background: #f0f0f0;
+  color: #333;
 }
 
-function closeQRModal() {
-  document.getElementById('qrModal').style.display = 'none';
+/* Social Icons */
+.share-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-function downloadQRCode() {
-  const qrImage = document.getElementById('qrImage');
-  const link = document.createElement('a');
-  link.download = 'qr-code.png';
-  link.href = qrImage.src;
-  link.click();
+.share-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.icon .circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FF6B00;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* QR Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
 }
