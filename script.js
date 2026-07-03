@@ -11,11 +11,18 @@ function updatePopup() {
   const optionData = translations.options[option][lang];
   const buttonData = translations.buttons[lang];
 
+  // Update existing buttons
   document.getElementById('popupTitle').innerText = optionData.title;
   document.getElementById('popupSubtitle').innerText = optionData.subtitle;
   document.getElementById('downloadBtn').innerHTML = buttonData.downloadBtn;
   document.getElementById('copyBtn').innerHTML = buttonData.copyBtn;
   document.getElementById('shareLabel').innerText = buttonData.shareLabel;
+
+  // NEW: Update Incentive Program button
+  const incentiveBtn = document.getElementById('incentiveBtn');
+  if (incentiveBtn && buttonData.incentiveBtn) {
+    incentiveBtn.innerHTML = buttonData.incentiveBtn;
+  }
 
   document.getElementById('overlay').style.display = 'flex';
 }
