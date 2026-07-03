@@ -43,11 +43,19 @@ window.onload = function() {
   }, 800);
 };
 
-// ==================== SHARING CONFIG ====================
-const shareUrl = "https://www.hktdc.com/event/foodexpopro/en/form/organic-form?visitor_type=01&country=&ref_office=&ref_code=&reg_link_id=808737bfa109a15a01c79c0936a40eb74e22124a7712073a537970bbc0c49332";
-const shareMessage = `Check out this HKTDC Food Expo Pro 2026: ${shareUrl}`;
+// ==================== INCENTIVE PROGRAM ====================
+function openIncentiveProgram() {
+  if (typeof translations === 'undefined' || !translations.urls) {
+    console.error("translations.urls is not loaded");
+    return;
+  }
+  window.open(translations.urls.incentive, '_blank');
+}
 
 // ==================== SHARING FUNCTIONS ====================
+const shareUrl = "https://terencehhhohktdc-creator.github.io/socsha_demo/";
+const shareMessage = `Check out this HKTDC Social Sharing Demo: ${shareUrl}`;
+
 function closePopup() {
   document.getElementById('overlay').style.display = 'none';
 }
