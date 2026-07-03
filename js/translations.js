@@ -20,17 +20,20 @@ const translations = {
 buttons: {
   en: {
     downloadBtn: "↓ Download Image",
-    copyBtn: "⎘ Share Referral Link",        // ← Updated
+    copyBtn: "⎘ Share Referral Link",
+    incentiveBtn: "🎁 Learn about Incentive Program",
     shareLabel: "Or share directly:"
   },
   tc: {
     downloadBtn: "↓ 下載圖片",
-    copyBtn: "⎘ 分享推薦連結",               // ← Updated
+    copyBtn: "⎘ 分享推薦連結",
+    incentiveBtn: "🎁 了解激勵計劃",
     shareLabel: "或直接分享："
   },
   sc: {
     downloadBtn: "↓ 下载图片",
-    copyBtn: "⎘ 分享推荐链接",               // ← Updated
+    copyBtn: "⎘ 分享推荐链接",
+    incentiveBtn: "🎁 了解激励计划",
     shareLabel: "或直接分享："
   }
 },
