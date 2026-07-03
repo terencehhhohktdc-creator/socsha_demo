@@ -1,4 +1,3 @@
-// js/translations.js
 const translations = {
   options: {
     1: {
@@ -34,5 +33,10 @@ const translations = {
       copyBtn: "⎘ 复制分享链接",
       shareLabel: "或直接分享："
     }
+  },
+
+  // URL Configuration
+  urls: {
+    incentive: "https://terencehhhohktdc-creator.github.io/socsha_demo/incentive-program"
   }
 };
