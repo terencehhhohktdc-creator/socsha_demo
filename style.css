@@ -1,4 +1,4 @@
-/* Base */
+/* ==================== BASE ==================== */
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
 }
 
-/* Switcher */
+/* ==================== SWITCHER ==================== */
 .switcher-container {
   display: flex;
   gap: 15px;
@@ -25,11 +25,13 @@ body {
   flex: 1;
 }
 
-/* Pop-up */
+/* ==================== POP-UP OVERLAY ==================== */
 .overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -39,6 +41,7 @@ body {
   box-sizing: border-box;
 }
 
+/* ==================== POP-UP BOX ==================== */
 .popup {
   background: #ffffff;
   padding: 26px 24px;
@@ -67,20 +70,23 @@ body {
   color: #FF6B00;
 }
 
-/* Title & Subtitle */
+/* Title */
 h2 {
   color: #FF6B00;
   margin: 0 0 6px 0;
   text-align: center;
   font-size: 22px;
   font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
+/* Subtitle */
 .subtitle {
   color: #555555;
   margin-bottom: 16px;
   text-align: center;
   font-size: 15px;
+  line-height: 1.4;
 }
 
 /* Event Photo Area */
@@ -149,6 +155,8 @@ h2 {
   color: #FF6B00;
   border: 2px solid #FF6B00;
   font-weight: 600;
+  margin: 10px 0;
+  width: 100%;
 }
 
 .btn.incentive:hover {
@@ -157,7 +165,7 @@ h2 {
   border-color: #e65c00;
 }
 
-/* Social Icons */
+/* Share Label */
 .share-label {
   font-weight: 600;
   margin: 14px 0 8px;
@@ -166,6 +174,7 @@ h2 {
   color: #444444;
 }
 
+/* Social Icons */
 .share-icons {
   display: flex;
   flex-wrap: wrap;
@@ -191,23 +200,23 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Brand Colors */
 .icon.linkedin   { background-color: #0A66C2; }
 .icon.facebook   { background-color: #1877F2; }
 .icon.whatsapp   { background-color: #25D366; }
 .icon.email      { background-color: #EA4335; }
 .icon.x          { background-color: #000000; }
 .icon.threads    { background-color: #000000; }
-.icon.wechat     { background-color: #07C160; }
-.icon.instagram  { background: linear-gradient(45deg, #f56040, #c13584, #405de6); }
-.icon.rednote    { background-color: #FF2442; }
 .icon.qr         { background-color: #FF6B00; }
 
 /* QR Modal */
 .modal {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.6);
   align-items: center;
   justify-content: center;
@@ -224,7 +233,7 @@ h2 {
   max-width: 320px;
 }
 
-/* Mobile */
+/* ==================== MOBILE ==================== */
 @media (max-width: 480px) {
   .overlay {
     padding: 12px;
