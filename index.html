@@ -49,9 +49,15 @@
       <h2 id="popupTitle">Share Your Attendance</h2>
       <p class="subtitle" id="popupSubtitle">Invite your industry peers to join.</p>
 
+      <!-- Event Photo Area -->
       <div class="event-photo-area">
         <img id="eventPhoto" alt="Event Photo" class="event-photo">
       </div>
+
+      <!-- Incentive Program Button (Moved Here) -->
+      <button class="btn incentive" onclick="openIncentiveProgram()">
+        🎁 Learn about Incentive Program
+      </button>
 
       <!-- Action Buttons -->
       <div class="action-buttons">
@@ -61,48 +67,30 @@
         <button class="btn secondary" onclick="copyShareableLink()" id="copyBtn">
           ⎘ Copy Shareable Link
         </button>
-
-        <!-- NEW: Incentive Program Button -->
-        <button class="btn incentive" onclick="openIncentiveProgram()">
-          🎁 Learn about Incentive Program
-        </button>
       </div>
 
       <!-- Social Share -->
       <p class="share-label" id="shareLabel">Or share directly:</p>
       
       <div class="share-icons">
-        <!-- LinkedIn -->
         <div class="icon linkedin" onclick="shareToLinkedIn()">
           <i class="fab fa-linkedin-in"></i>
         </div>
-
-        <!-- Facebook -->
         <div class="icon facebook" onclick="shareToFacebook()">
           <i class="fab fa-facebook-f"></i>
         </div>
-
-        <!-- WhatsApp -->
         <div class="icon whatsapp" onclick="shareToWhatsApp()">
           <i class="fab fa-whatsapp"></i>
         </div>
-
-        <!-- Email -->
         <div class="icon email" onclick="shareToEmail()">
           <i class="fas fa-envelope"></i>
         </div>
-
-        <!-- X (Twitter) -->
         <div class="icon x" onclick="shareToX()">
           <i class="fab fa-x-twitter"></i>
         </div>
-
-        <!-- Threads -->
         <div class="icon threads" onclick="shareToThreads()">
           <i class="fab fa-threads"></i>
         </div>
-
-        <!-- QR Code -->
         <div class="icon qr" onclick="generateQRCode()">
           <i class="fas fa-qrcode"></i>
         </div>
