@@ -17,23 +17,23 @@ const translations = {
     }
   },
 
-  buttons: {
-    en: {
-      downloadBtn: "↓ Download Image",
-      copyBtn: "⎘ Copy Shareable Link",
-      shareLabel: "Or share directly:"
-    },
-    tc: {
-      downloadBtn: "↓ 下載圖片",
-      copyBtn: "⎘ 複製分享連結",
-      shareLabel: "或直接分享："
-    },
-    sc: {
-      downloadBtn: "↓ 下载图片",
-      copyBtn: "⎘ 复制分享链接",
-      shareLabel: "或直接分享："
-    }
+buttons: {
+  en: {
+    downloadBtn: "↓ Download Image",
+    copyBtn: "⎘ Share Referral Link",        // ← Updated
+    shareLabel: "Or share directly:"
   },
+  tc: {
+    downloadBtn: "↓ 下載圖片",
+    copyBtn: "⎘ 分享推薦連結",               // ← Updated
+    shareLabel: "或直接分享："
+  },
+  sc: {
+    downloadBtn: "↓ 下载图片",
+    copyBtn: "⎘ 分享推荐链接",               // ← Updated
+    shareLabel: "或直接分享："
+  }
+},
 
   // URL Configuration
   urls: {
