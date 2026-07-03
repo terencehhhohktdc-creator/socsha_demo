@@ -1,9 +1,9 @@
 const translations = {
   options: {
     1: {
-      en: { title: "Share Your Attendance", subtitle: "Invite your industry peers to join." },
-      tc: { title: "分享您的參與", subtitle: "邀請業界同行一同參與。" },
-      sc: { title: "分享您的参与", subtitle: "邀请业界同行一同参与。" }
+      en: { title: "Bring your network along", subtitle: "share your referral link today." },
+      tc: { title: "分享給您的業界夥伴", subtitle: "一同參與行業盛會！" },
+      sc: { title: "分享给您的业界伙伴", subtitle: "一同参与行业盛会！" }
     },
     2: {
       en: { title: "Let Your Peers Know", subtitle: "Share this valuable opportunity with them." },
