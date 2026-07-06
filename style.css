@@ -41,13 +41,13 @@ body {
   box-sizing: border-box;
 }
 
-/* ==================== POP-UP BOX ==================== */
+/* ==================== POP-UP BOX (Tighter) ==================== */
 .popup {
   background: #ffffff;
-  padding: 26px 24px;
+  padding: 20px 18px;
   border-radius: 12px;
   width: 100%;
-  max-width: 440px;
+  max-width: 420px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   position: relative;
   box-sizing: border-box;
@@ -70,20 +70,20 @@ body {
   color: #FF6B00;
 }
 
-/* ==================== TITLE & SUBTITLE (Stronger & More Eye-Catching) ==================== */
+/* ==================== TITLE & SUBTITLE (Strong & Eye-Catching) ==================== */
 .title-section {
   background-color: #FFF8F0;
-  padding: 20px 22px;
+  padding: 18px 20px;
   border-radius: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   text-align: center;
 }
 
 h2 {
   color: #FF6B00;
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   text-align: center;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   line-height: 1.3;
 }
@@ -92,26 +92,28 @@ h2 {
   color: #222222;
   margin: 0;
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
 }
 
-/* ==================== EVENT PHOTO AREA ==================== */
+/* ==================== EVENT PHOTO AREA (Smaller + Top Aligned) ==================== */
 .event-photo-area {
   position: relative;
-  margin: 14px 0;
+  margin: 10px 0;
   border-radius: 10px;
   overflow: hidden;
   border: 2px dashed #cccccc;
   width: 100%;
   aspect-ratio: 1 / 1;
+  max-height: 180px;
 }
 
 .event-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   display: block;
 }
 
@@ -119,14 +121,14 @@ h2 {
 .action-buttons {
   display: flex;
   gap: 12px;
-  margin: 16px 0 8px;
+  margin: 12px 0 6px;
   flex-wrap: wrap;
 }
 
 .btn {
   flex: 1;
   min-width: 140px;
-  padding: 13px 16px;
+  padding: 12px 14px;
   border: none;
   border-radius: 8px;
   font-weight: 600;
@@ -163,7 +165,7 @@ h2 {
   color: #FF6B00;
   border: 2px solid #FF6B00;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 8px 0;
   width: 100%;
 }
 
@@ -176,7 +178,7 @@ h2 {
 /* ==================== SOCIAL SHARE ==================== */
 .share-label {
   font-weight: 600;
-  margin: 14px 0 8px;
+  margin: 12px 0 6px;
   text-align: center;
   font-size: 14px;
   color: #444444;
@@ -186,17 +188,17 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .icon {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: 19px;
   color: white;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -233,32 +235,43 @@ h2 {
 
 .modal-content {
   background: white;
-  padding: 24px 20px;
+  padding: 22px 18px;
   border-radius: 12px;
   text-align: center;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
 }
 
 /* ==================== MOBILE RESPONSIVE ==================== */
 @media (max-width: 480px) {
   .overlay {
-    padding: 12px;
+    padding: 10px;
     align-items: flex-start;
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   .popup {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 20px 18px;
-    max-height: 88vh;
+    padding: 16px 14px;
+    max-height: 92vh;
     overflow-y: auto;
   }
 
   .event-photo-area {
-    max-height: 200px;
+    max-height: 150px;
+    margin: 6px 0;
+  }
+
+  .title-section {
+    padding: 12px 14px;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 15px;
   }
 
   .action-buttons {
@@ -271,7 +284,7 @@ h2 {
 
   .switcher-container {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .switcher-container select {
