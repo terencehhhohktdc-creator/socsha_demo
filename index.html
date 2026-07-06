@@ -46,18 +46,21 @@
     <div class="popup">
       <span class="close" onclick="closePopup()">×</span>
 
-      <h2 id="popupTitle">Share Your Attendance</h2>
-      <p class="subtitle" id="popupSubtitle">Invite your industry peers to join.</p>
+      <!-- Title & Subtitle Section (Improved) -->
+      <div class="title-section">
+        <h2 id="popupTitle">Bring your network along</h2>
+        <p class="subtitle" id="popupSubtitle">share your referral link today.</p>
+      </div>
 
       <!-- Event Photo Area -->
       <div class="event-photo-area">
         <img id="eventPhoto" alt="Event Photo" class="event-photo">
       </div>
 
-<!-- Incentive Program Button -->
-<button class="btn incentive" onclick="openIncentiveProgram()" id="incentiveBtn">
-  🎁 Learn about Incentive Program
-</button>
+      <!-- Incentive Program Button -->
+      <button class="btn incentive" onclick="openIncentiveProgram()">
+        🎁 Learn about Incentive Program
+      </button>
 
       <!-- Action Buttons -->
       <div class="action-buttons">
@@ -65,7 +68,7 @@
           ↓ Download Image
         </button>
         <button class="btn secondary" onclick="copyShareableLink()" id="copyBtn">
-          ⎘ Copy Shareable Link
+          ⎘ Share Referral Link
         </button>
       </div>
 
