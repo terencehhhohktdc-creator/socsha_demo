@@ -4,6 +4,7 @@ Demo for the **VEP Buyers Registration – Social Media Sharing and Referral Tra
 
 ## Features
 
+- **Password protected** access
 - Post-registration social sharing pop-up
 - 3 copywriting options × 3 languages (EN / TC / SC)
 - Action buttons: **Download Image** + **Copy Shareable Link**
@@ -21,8 +22,12 @@ Demo for the **VEP Buyers Registration – Social Media Sharing and Referral Tra
 ## How to use
 
 1. Open `index.html` in a browser (or host on GitHub Pages)
-2. Use the top dropdowns to switch **Option** and **Language**
-3. Pop-up appears automatically
+2. Enter the password when prompted  
+   **Default password: `HKTDC2026`**
+3. Use the top dropdowns to switch **Option** and **Language**
+4. Pop-up appears automatically
+
+> You can change the password in `script.js` (search for `DEMO_PASSWORD`).
 
 ## Folder Structure
 
@@ -34,16 +39,17 @@ socsha_demo/
 ├── js/
 │   └── translations.js
 ├── img/
-│   └── event-photo.svg   ← placeholder (replace with real JPG/PNG)
+│   └── event-photo.jpg   ← placeholder (replace with real JPG/PNG)
 └── README.md
 ```
 
 ## Notes
 
-- Replace `./img/event-photo.svg` with a real square event image (JPG or PNG recommended).
+- Replace `./img/event-photo.jpg` with a real square event image (JPG or PNG recommended).
 - `demoConfig.baseShareUrl` and `referrerId` in `translations.js` are for demo purposes.
 - In production these values come from VEP CMS / backend.
 - Facebook share may have issues on iOS Safari (known limitation of sharer.php).
+- Password protection is client-side only (suitable for private demos, not production security).
 
 ## Reference
 

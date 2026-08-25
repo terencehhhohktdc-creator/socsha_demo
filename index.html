@@ -17,6 +17,20 @@
 </head>
 <body>
 
+  <!-- ==================== PASSWORD GATE ==================== -->
+  <div id="passwordGate" class="password-gate">
+    <div class="password-box">
+      <h2>HKTDC Demo Access</h2>
+      <p>Please enter the password to continue</p>
+      <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
+      <button onclick="checkPassword()">Enter</button>
+      <p id="passwordError" class="error-msg" style="display:none;">Incorrect password. Please try again.</p>
+    </div>
+  </div>
+
+  <!-- Main Content (hidden until password is correct) -->
+  <div id="mainContent" style="display:none;">
+
   <!-- Demo Controls (for testing different options & languages) -->
   <div class="switcher-container">
     <select id="optionSelect" onchange="updatePopup()">
@@ -45,7 +59,7 @@
 
       <!-- Event Photo Area (1:1, top-aligned) -->
       <div class="event-photo-area">
-        <img id="eventPhoto" src="./img/event-photo.svg" alt="Event Photo" class="event-photo">
+        <img id="eventPhoto" src="./img/event-photo.jpg" alt="Event Photo" class="event-photo">
       </div>
 
       <!-- Action Buttons -->
@@ -99,6 +113,8 @@
       </button>
     </div>
   </div>
+
+  </div><!-- end of #mainContent -->
 
   <script src="js/translations.js"></script>
   <script src="script.js"></script>

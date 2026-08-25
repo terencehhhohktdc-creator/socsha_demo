@@ -2,13 +2,58 @@
 let currentOption = "1";
 let currentLang = "en";
 
-// ==================== INIT ====================
-window.onload = function () {
+// ==================== PASSWORD PROTECTION ====================
+// Change this password as needed
+const DEMO_PASSWORD = "HKTDC2026";
+
+function checkPassword() {
+  const input = document.getElementById("passwordInput");
+  const errorMsg = document.getElementById("passwordError");
+
+  if (input.value === DEMO_PASSWORD) {
+    // Correct password
+    sessionStorage.setItem("demoAuth", "true");
+    document.getElementById("passwordGate").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+    initDemo();
+  } else {
+    // Wrong password
+    errorMsg.style.display = "block";
+    input.value = "";
+    input.focus();
+  }
+}
+
+// Allow pressing Enter key
+document.addEventListener("DOMContentLoaded", function () {
+  const input = document.getElementById("passwordInput");
+  if (input) {
+    input.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        checkPassword();
+      }
+    });
+  }
+
+  // Check if already authenticated in this session
+  if (sessionStorage.getItem("demoAuth") === "true") {
+    document.getElementById("passwordGate").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+    initDemo();
+  }
+});
+
+function initDemo() {
   updatePopup();
   // Auto show popup after short delay (simulating post-registration)
   setTimeout(() => {
     document.getElementById("overlay").style.display = "flex";
   }, 400);
+}
+
+// ==================== INIT ====================
+window.onload = function () {
+  // Password gate handles the rest
 };
 
 // ==================== UPDATE POPUP CONTENT ====================
