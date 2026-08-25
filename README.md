@@ -34,13 +34,13 @@ socsha_demo/
 ├── js/
 │   └── translations.js
 ├── img/
-│   └── event-photo.jpg   ← replace with real event image
+│   └── event-photo.svg   ← placeholder (replace with real JPG/PNG)
 └── README.md
 ```
 
 ## Notes
 
-- Replace `./img/event-photo.jpg` with the actual square event image.
+- Replace `./img/event-photo.svg` with a real square event image (JPG or PNG recommended).
 - `demoConfig.baseShareUrl` and `referrerId` in `translations.js` are for demo purposes.
 - In production these values come from VEP CMS / backend.
 - Facebook share may have issues on iOS Safari (known limitation of sharer.php).
