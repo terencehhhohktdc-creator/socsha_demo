@@ -9,7 +9,7 @@ const translations = {
       shareLabel: "Or share directly:",
       downloadBtn: "↓ Download Image",
       copyBtn: "⎘ Copy Shareable Link",
-      prefilledMessage: "I've registered for this HKTDC event. Join me!"
+      prefilledMessage: "I've registered for this event. Join me!"
     },
     tc: {
       title: "分享您的參與",
@@ -17,7 +17,7 @@ const translations = {
       shareLabel: "或直接分享：",
       downloadBtn: "↓ 下載圖片",
       copyBtn: "⎘ 複製分享連結",
-      prefilledMessage: "我已報名參加這個貿發局活動，邀請你一同參與！"
+      prefilledMessage: "我已報名參加這個活動，邀請你一同參與！"
     },
     sc: {
       title: "分享您的参与",
@@ -25,7 +25,7 @@ const translations = {
       shareLabel: "或直接分享：",
       downloadBtn: "↓ 下载图片",
       copyBtn: "⎘ 复制分享链接",
-      prefilledMessage: "我已报名参加这个贸发局活动，邀请你一同参与！"
+      prefilledMessage: "我已报名参加这个活动，邀请你一同参与！"
     }
   },
   2: {
@@ -35,7 +35,7 @@ const translations = {
       shareLabel: "Or share directly:",
       downloadBtn: "↓ Download Image",
       copyBtn: "⎘ Copy Shareable Link",
-      prefilledMessage: "Check out this HKTDC event – a great opportunity for our industry!"
+      prefilledMessage: "Check out this event – a great opportunity for our industry!"
     },
     tc: {
       title: "讓同行知道",
@@ -43,7 +43,7 @@ const translations = {
       shareLabel: "或直接分享：",
       downloadBtn: "↓ 下載圖片",
       copyBtn: "⎘ 複製分享連結",
-      prefilledMessage: "看看這個貿發局活動——對我們業界來說是一個很好的機會！"
+      prefilledMessage: "看看這個活動——對我們業界來說是一個很好的機會！"
     },
     sc: {
       title: "让同行知道",
@@ -51,7 +51,7 @@ const translations = {
       shareLabel: "或直接分享：",
       downloadBtn: "↓ 下载图片",
       copyBtn: "⎘ 复制分享链接",
-      prefilledMessage: "看看这个贸发局活动——对我们业界来说是一个很好的机会！"
+      prefilledMessage: "看看这个活动——对我们业界来说是一个很好的机会！"
     }
   },
   3: {
@@ -61,7 +61,7 @@ const translations = {
       shareLabel: "Or share directly:",
       downloadBtn: "↓ Download Image",
       copyBtn: "⎘ Copy Shareable Link",
-      prefilledMessage: "I'm attending this HKTDC event. Come explore with me!"
+      prefilledMessage: "I'm attending this event. Come explore with me!"
     },
     tc: {
       title: "您已參與",
@@ -69,7 +69,7 @@ const translations = {
       shareLabel: "或直接分享：",
       downloadBtn: "↓ 下載圖片",
       copyBtn: "⎘ 複製分享連結",
-      prefilledMessage: "我將參加這個貿發局活動，邀請你一同探索！"
+      prefilledMessage: "我將參加這個活動，邀請你一同探索！"
     },
     sc: {
       title: "您已参与",
@@ -77,21 +77,14 @@ const translations = {
       shareLabel: "或直接分享：",
       downloadBtn: "↓ 下载图片",
       copyBtn: "⎘ 复制分享链接",
-      prefilledMessage: "我将参加这个贸发局活动，邀请你一同探索！"
+      prefilledMessage: "我将参加这个活动，邀请你一同探索！"
     }
   }
 };
 
 // ==================== DEMO CONFIG ====================
-// In real implementation these would come from CMS / backend
-
 const demoConfig = {
-  // Base form sharing URL (without referral parameters)
   baseShareUrl: "https://www-uat.hktdc.com/event/foodexpopro/en/form/organic-form?visitor_type=01&country=&ref_office=&ref_code=38B48B9A8&reg_link_id=95fe644387fc80fd61f753a4fc759b7fcb1f65064d60026bb0bcd0597594a629",
-
-  // Simulated Referrer ID (Base62 of registration number) - 8-9 characters
   referrerId: "0LV3g9q8I",
-
-  // Event photo path
   eventPhoto: "./img/event-photo.jpg"
 };

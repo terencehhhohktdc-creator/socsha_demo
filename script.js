@@ -4,7 +4,7 @@ let currentLang = "en";
 
 // ==================== PASSWORD PROTECTION ====================
 // Change this password as needed
-const DEMO_PASSWORD = "HKTDC2026";
+const DEMO_PASSWORD = "demo2026";
 
 function checkPassword() {
   const input = document.getElementById("passwordInput");
@@ -117,7 +117,7 @@ function downloadImage() {
   const img = document.getElementById("eventPhoto");
   const link = document.createElement("a");
   link.href = img.src;
-  link.download = "HKTDC-Event-Image.jpg";
+  link.download = "Event-Image.jpg";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -154,7 +154,7 @@ function shareTo(platform) {
       break;
 
     case "email":
-      url = `mailto:?subject=${encodeURIComponent("Join me at this HKTDC event")}&body=${encodeURIComponent(message + "\n\n" + shareUrl)}`;
+      url = `mailto:?subject=${encodeURIComponent("Join me at this event")}&body=${encodeURIComponent(message + "\n\n" + shareUrl)}`;
       break;
   }
 
@@ -181,7 +181,7 @@ function downloadQRCode() {
   const img = document.getElementById("qrImage");
   const link = document.createElement("a");
   link.href = img.src;
-  link.download = "HKTDC-Referral-QR.png";
+  link.download = "Referral-QR.png";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
