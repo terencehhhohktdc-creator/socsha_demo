@@ -44,6 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initDemo() {
+  // Restore full-page background image (thank-you page style)
+  document.body.style.backgroundImage = "url('./img/background.jpg')";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center top";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundAttachment = "fixed";
+
   updatePopup();
   // Auto show popup after short delay (simulating post-registration)
   setTimeout(() => {
