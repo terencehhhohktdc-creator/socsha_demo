@@ -1,137 +1,136 @@
-// ==================== UPDATE POPUP ====================
-function updatePopup() {
-  if (typeof translations === 'undefined') {
-    console.error("translations is not loaded yet");
-    return;
-  }
+// ==================== STATE ====================
+let currentOption = "1";
+let currentLang = "en";
 
-  const option = document.getElementById('optionSelect').value;
-  const lang = document.getElementById('languageSelect').value;
-
-  const optionData = translations.options[option][lang];
-  const buttonData = translations.buttons[lang];
-
-  // Update existing buttons
-  document.getElementById('popupTitle').innerText = optionData.title;
-  document.getElementById('popupSubtitle').innerText = optionData.subtitle;
-  document.getElementById('downloadBtn').innerHTML = buttonData.downloadBtn;
-  document.getElementById('copyBtn').innerHTML = buttonData.copyBtn;
-  document.getElementById('shareLabel').innerText = buttonData.shareLabel;
-
-  // NEW: Update Incentive Program button
-  const incentiveBtn = document.getElementById('incentiveBtn');
-  if (incentiveBtn && buttonData.incentiveBtn) {
-    incentiveBtn.innerHTML = buttonData.incentiveBtn;
-  }
-
-  document.getElementById('overlay').style.display = 'flex';
-}
-
-// ==================== INITIALIZE IMAGES ====================
-function initImages() {
-  const eventPhoto = document.getElementById('eventPhoto');
-  eventPhoto.src = images.eventPhoto;
-
-  document.body.style.backgroundImage = `url('${images.background}')`;
-  document.body.style.backgroundSize = 'cover';
-  document.body.style.backgroundPosition = 'center top';
-  document.body.style.backgroundRepeat = 'no-repeat';
-}
-
-// ==================== PAGE LOAD ====================
-window.onload = function() {
-  initImages();
-
-  document.getElementById('optionSelect').value = '1';
-  document.getElementById('languageSelect').value = 'en';
-
-  setTimeout(function() {
-    updatePopup();
-  }, 800);
+// ==================== INIT ====================
+window.onload = function () {
+  updatePopup();
+  // Auto show popup after short delay (simulating post-registration)
+  setTimeout(() => {
+    document.getElementById("overlay").style.display = "flex";
+  }, 400);
 };
 
-// ==================== INCENTIVE PROGRAM ====================
-function openIncentiveProgram() {
-  if (typeof translations === 'undefined' || !translations.urls) {
-    console.error("translations.urls is not loaded");
-    return;
-  }
-  window.open(translations.urls.incentive, '_blank');
+// ==================== UPDATE POPUP CONTENT ====================
+function updatePopup() {
+  currentOption = document.getElementById("optionSelect").value;
+  currentLang = document.getElementById("languageSelect").value;
+
+  const t = translations[currentOption][currentLang];
+
+  document.getElementById("popupTitle").textContent = t.title;
+  document.getElementById("popupSubtitle").textContent = t.subtitle;
+  document.getElementById("shareLabel").textContent = t.shareLabel;
+  document.getElementById("downloadBtn").textContent = t.downloadBtn;
+  document.getElementById("copyBtn").textContent = t.copyBtn;
+
+  // Keep popup visible when switching
+  document.getElementById("overlay").style.display = "flex";
 }
 
-// ==================== SHARING FUNCTIONS ====================
-const shareUrl = "https://terencehhhohktdc-creator.github.io/socsha_demo/";
-const shareMessage = `Check out this HKTDC Social Sharing Demo: ${shareUrl}`;
-
+// ==================== CLOSE ====================
 function closePopup() {
-  document.getElementById('overlay').style.display = 'none';
+  document.getElementById("overlay").style.display = "none";
 }
 
-function shareToLinkedIn() {
-  const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
-  window.open(url, '_blank');
+// ==================== BUILD SHAREABLE LINK ====================
+// Appends rel (referrer ID) + cha (channel code)
+function getShareableLink(channel = "copy") {
+  const base = demoConfig.baseShareUrl;
+  const rel = demoConfig.referrerId;
+  const separator = base.includes("?") ? "&" : "?";
+  return `${base}${separator}rel=${rel}&cha=${channel}`;
 }
 
-function shareToFacebook() {
-  const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
-  window.open(url, '_blank');
+function getPrefilledMessage() {
+  return translations[currentOption][currentLang].prefilledMessage;
 }
 
-function shareToWhatsApp() {
-  window.open(`https://wa.me/?text=${encodeURIComponent(shareMessage)}`, '_blank');
-}
-
-function shareToEmail() {
-  window.location.href = `mailto:?subject=HKTDC Social Sharing Demo&body=${encodeURIComponent(shareMessage)}`;
-}
-
-function copyToClipboard() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied!"));
-}
-
-function shareToX() {
-  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}`, '_blank');
-}
-
-function shareToThreads() {
-  window.open(`https://www.threads.net/intent/post?text=${encodeURIComponent(shareMessage)}`, '_blank');
-}
-
-function shareToWeChat() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste in WeChat."));
-}
-
-function shareToInstagram() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste in Instagram."));
-}
-
-function shareToRedNote() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Link copied! Paste in RedNote."));
-}
-
-function downloadImage() {
-  alert("Download Image feature triggered.");
-}
-
+// ==================== COPY SHAREABLE LINK ====================
 function copyShareableLink() {
-  navigator.clipboard.writeText(shareMessage).then(() => alert("Shareable link copied!"));
+  const link = getShareableLink("copy");
+  const message = getPrefilledMessage();
+  const fullText = `${message}\n\n${link}`;
+
+  navigator.clipboard.writeText(fullText).then(() => {
+    alert("Copied to clipboard!\n\n" + fullText);
+  }).catch(() => {
+    // Fallback
+    prompt("Copy this text:", fullText);
+  });
 }
 
+// ==================== DOWNLOAD IMAGE ====================
+function downloadImage() {
+  const img = document.getElementById("eventPhoto");
+  const link = document.createElement("a");
+  link.href = img.src;
+  link.download = "HKTDC-Event-Image.jpg";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// ==================== SOCIAL SHARE (1-CLICK) ====================
+function shareTo(platform) {
+  const shareUrl = getShareableLink(platform);
+  const message = getPrefilledMessage();
+  let url = "";
+
+  switch (platform) {
+    case "linkedin":
+      // URL only (LinkedIn does not support prefilled text via share-offsite)
+      url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+      break;
+
+    case "facebook":
+      // URL only. Note: may have issues on iOS Safari
+      url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+      break;
+
+    case "x":
+      url = `https://x.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(message)}`;
+      break;
+
+    case "threads":
+      // Official Threads Web Intent
+      url = `https://www.threads.net/intent/post?text=${encodeURIComponent(message + " " + shareUrl)}`;
+      break;
+
+    case "whatsapp":
+      url = `https://wa.me/?text=${encodeURIComponent(message + " " + shareUrl)}`;
+      break;
+
+    case "email":
+      url = `mailto:?subject=${encodeURIComponent("Join me at this HKTDC event")}&body=${encodeURIComponent(message + "\n\n" + shareUrl)}`;
+      break;
+  }
+
+  if (url) {
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+}
+
+// ==================== QR CODE ====================
 function generateQRCode() {
-  const modal = document.getElementById('qrModal');
-  const qrImage = document.getElementById('qrImage');
-  qrImage.src = `https://quickchart.io/qr?text=${encodeURIComponent(shareUrl)}&size=200`;
-  modal.style.display = 'flex';
+  const shareUrl = getShareableLink("qr");
+  // Using QuickChart.io (simple & reliable)
+  const qrUrl = `https://quickchart.io/qr?text=${encodeURIComponent(shareUrl)}&size=200`;
+
+  document.getElementById("qrImage").src = qrUrl;
+  document.getElementById("qrModal").style.display = "flex";
 }
 
 function closeQRModal() {
-  document.getElementById('qrModal').style.display = 'none';
+  document.getElementById("qrModal").style.display = "none";
 }
 
 function downloadQRCode() {
-  const qrImage = document.getElementById('qrImage');
-  const link = document.createElement('a');
-  link.download = 'qr-code.png';
-  link.href = qrImage.src;
+  const img = document.getElementById("qrImage");
+  const link = document.createElement("a");
+  link.href = img.src;
+  link.download = "HKTDC-Referral-QR.png";
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 }
